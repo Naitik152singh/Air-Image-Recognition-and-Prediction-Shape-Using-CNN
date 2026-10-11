@@ -10,8 +10,6 @@ A Computer Vision and Deep Learning system that enables touchless mid-air drawin
 - [Key Features](#key-features)
 - [System Architecture](#system-architecture)
 - [Tech Stack](#tech-stack)
-- [Installation & Setup](#installation--setup)
-- [How It Works](#how-it-works)
 - [Dataset Details](#dataset-details)
 - [Gesture Controls & Keyboard Shortcuts](#gesture-controls--keyboard-shortcuts)
 - [Troubleshooting](#troubleshooting)
@@ -52,3 +50,81 @@ Inspired by recent research in spatial character and gesture recognition (*Zhang
 ---
 
 ## System Architecture
+
+[ Webcam Feed ]
+│
+▼
+[ MediaPipe Hand Tracking ] ──► Extract Index Fingertip Coordinates (Landmark 8)
+│
+▼
+[ Signal Filtering ] ──► Exponential Moving Average (EMA) Smoothing
+│
+▼
+[ Virtual Canvas Buffer ] ──► Accumulate Freehand Stroke Pixels
+│
+▼
+[ Bounding Box Crop & Normalization ] ──► Pad 1:1 Aspect Ratio & Resize to 64x64
+│
+▼
+[ 15-Class CNN Classifier ] ──► Compute Softmax Probability
+│
+├─────────────────────────────────┐
+▼                                 ▼
+[ Digit Handler (0-9) ]         [ Shape Vector Snapper ]
+Render Clean Font Text          Polygonal / Circular Contour Fitting
+
+---
+
+## Tech Stack
+
+* **Programming Language:** Python 3.8+
+* **Computer Vision:** OpenCV (`opencv-python`)
+* **Hand Tracking & Landmarks:** Google MediaPipe (`mediapipe`)
+* **Deep Learning Framework:** TensorFlow / Keras (`tensorflow`)
+* **Data Processing:** Scientific NumPy (`numpy`)
+
+---
+
+## Dataset Details
+
+Category Type,Classes Included,Source Dataset,Image Dimensions
+Handwritten Digits,"0, 1, 2, 3, 4, 5, 6, 7, 8, 9",MNIST Database,28×28 resized to 64×64
+Geometric Shapes,"circle, triangle, square, star, line","Google Quick, Draw! Dataset",28×28 resized to 64×64
+
+---
+
+## Gesture Controls & Keyboard Shortcuts
+
+Control Action,Gesture / Key Input,Description
+Draw Mode,"Index Finger UP, Middle Finger DOWN",Draws green strokes onto the screen canvas.
+Move Cursor,"Index Finger UP, Middle Finger UP",Repositions the active cursor without drawing.
+Predict & Snap,Press p,Runs CNN inference on canvas. Replaces strokes with text or vector shapes.
+Clear Canvas,Press c,Erases all drawn elements from the screen.
+Quit App,Press q,Closes the application window and exits the process.
+
+---
+
+## Troubleshooting
+
+Webcam Initialization Error (cap.isOpened() == False):
+Change cap = cv2.VideoCapture(0) to cap = cv2.VideoCapture(1) inside main.py if using an external USB webcam.
+
+Jitter Sensitivity:
+Adjust the smoothing weight alpha in apply_ema_filter(..., alpha=0.35) inside main.py. A lower alpha (e.g., 0.20) increases stroke smoothness.
+
+Low Accuracy on Complex Shapes:
+Increase SAMPLES_PER_CLASS from 2500 to 5000 or increase EPOCHS in train_and_save_model() before running initial training.
+
+## Citation & References
+
+@article{zhang2023airgr,
+  title={Air-GR: An Over-the-Air Handwritten Character Recognition System Based on Coordinate Correction YOLOv5 Algorithm and LGR-CNN},
+  author={Zhang, Yajun and Li, Zijian and Yang, Zhixiong and Yuan, Bo and Liu, Xu},
+  journal={Sensors},
+  volume={23},
+  number={3},
+  pages={1464},
+  year={2023},
+  publisher={MDPI},
+  doi={10.3390/s23031464}
+}
