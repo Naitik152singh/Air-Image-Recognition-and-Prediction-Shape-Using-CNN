@@ -100,25 +100,26 @@ Inspired by recent research in spatial character and gesture recognition (*Zhang
 
 ## Troubleshooting
 
-* **Webcam Initialization Error (cap.isOpened() == False)**:
+* **Webcam Initialization Error (cap.isOpened() == False)** :
  Change cap = cv2.VideoCapture(0) to cap = cv2.VideoCapture(1) inside main.py if using an external USB webcam.
 
-* **Jitter Sensitivity**:
+* **Jitter Sensitivity** :
  Adjust the smoothing weight alpha in apply_ema_filter(..., alpha=0.35) inside main.py. A lower alpha (e.g., 0.20) increases stroke smoothness.
 
-* **Low Accuracy on Complex Shapes**:
+* **Low Accuracy on Complex Shapes** :
  Increase SAMPLES_PER_CLASS from 2500 to 5000 or increase EPOCHS in train_and_save_model() before running initial training.
 
 ## Citation & References
 
-@article{zhang2023airgr,
-  title={Air-GR: An Over-the-Air Handwritten Character Recognition System Based on Coordinate Correction YOLOv5 Algorithm and LGR-CNN},
-  author={Zhang, Yajun and Li, Zijian and Yang, Zhixiong and Yuan, Bo and Liu, Xu},
-  journal={Sensors},
-  volume={23},
-  number={3},
-  pages={1464},
-  year={2023},
-  publisher={MDPI},
-  doi={10.3390/s23031464}
-}
+* **IEEE Format** :
+
+Y. Zhang, Z. Li, Z. Yang, B. Yuan, and X. Liu, "Air-GR: An Over-the-Air Handwritten Character Recognition System Based on Coordinate Correction YOLOv5 Algorithm and LGR-CNN," Sensors, vol. 23, no. 3, p. 1464, Jan. 2023, doi: 10.3390/s23031464.
+
+* **APA 7th Edition** :
+
+Zhang, Y., Li, Z., Yang, Z., Yuan, B., & Liu, X. (2023). Air-GR: An Over-the-Air Handwritten Character Recognition System Based on Coordinate Correction YOLOv5 Algorithm and LGR-CNN. Sensors, 23(3), 1464. https://doi.org/10.3390/s23031464
+
+* **Dataset Citations** :
+MNIST Dataset: LeCun, Y., Cortes, C., & Burges, C. J. (2010). MNIST handwritten digit database. AT&T Labs. http://yann.lecun.com/exdb/mnist/
+
+Google Quick, Draw! Dataset: Google Inc. (2017). Quick, Draw! Dataset. Google Creative Lab. https://github.com/googlecreativelab/quickdraw-dataset
