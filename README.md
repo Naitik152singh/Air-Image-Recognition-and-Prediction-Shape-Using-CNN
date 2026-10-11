@@ -51,27 +51,20 @@ Inspired by recent research in spatial character and gesture recognition (*Zhang
 
 ## System Architecture
 
-[ Webcam Feed ]
-│
-▼
-[ MediaPipe Hand Tracking ] ──► Extract Index Fingertip Coordinates (Landmark 8)
-│
-▼
-[ Signal Filtering ] ──► Exponential Moving Average (EMA) Smoothing
-│
-▼
-[ Virtual Canvas Buffer ] ──► Accumulate Freehand Stroke Pixels
-│
-▼
-[ Bounding Box Crop & Normalization ] ──► Pad 1:1 Aspect Ratio & Resize to 64x64
-│
-▼
-[ 15-Class CNN Classifier ] ──► Compute Softmax Probability
-│
-├─────────────────────────────────┐
-▼                                 ▼
-[ Digit Handler (0-9) ]         [ Shape Vector Snapper ]
-Render Clean Font Text          Polygonal / Circular Contour Fitting
+* [ Webcam Feed ] |
+
+* [ MediaPipe Hand Tracking ] ──► Extract Index Fingertip Coordinates (Landmark 8) |
+
+* [ Signal Filtering ] ──► Exponential Moving Average (EMA) Smoothing |
+
+* [ Virtual Canvas Buffer ] ──► Accumulate Freehand Stroke Pixels |
+
+* [ Bounding Box Crop & Normalization ] ──► Pad 1:1 Aspect Ratio & Resize to 64x64 |
+
+* [ 15-Class CNN Classifier ] ──► Compute Softmax Probability |
+                                 
+  [ Digit Handler (0-9) ]         [ Shape Vector Snapper ]
+  Render Clean Font Text          Polygonal / Circular Contour Fitting
 
 ---
 
