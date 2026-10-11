@@ -82,8 +82,8 @@ Inspired by recent research in spatial character and gesture recognition (*Zhang
 
 | Category Type | Classes Included |Source Dataset | Image Dimensions |
 | :--- | :--- | :--- |
-| **Handwritten Digits** | "0, 1, 2, 3, 4, 5, 6, 7, 8, 9" | MNIST Database | 28×28 resized to 64×64 |
-| **Geometric Shapes** | "circle, triangle, square, star, line" | "Google Quick, Draw! Dataset" | 28×28 resized to 64×64 |
+| **Handwritten Digits** | "0, 1, 2, 3, 4, 5, 6, 7, 8, 9" | MNIST Database | 28×28 resized to 64×64. |
+| **Geometric Shapes** | "circle, triangle, square, star, line". | "Google Quick, Draw! Dataset". | 28×28 resized to 64×64. |
 
 ---
 
