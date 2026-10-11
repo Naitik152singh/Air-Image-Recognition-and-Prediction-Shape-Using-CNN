@@ -113,13 +113,13 @@ Inspired by recent research in spatial character and gesture recognition (*Zhang
 
 * **IEEE Format** :
 
-Y. Zhang, Z. Li, Z. Yang, B. Yuan, and X. Liu, "Air-GR: An Over-the-Air Handwritten Character Recognition System Based on Coordinate Correction YOLOv5 Algorithm and LGR-CNN," Sensors, vol. 23, no. 3, p. 1464, Jan. 2023, doi: 10.3390/s23031464.
+  Y. Zhang, Z. Li, Z. Yang, B. Yuan, and X. Liu, "Air-GR: An Over-the-Air Handwritten Character Recognition System Based on Coordinate Correction YOLOv5 Algorithm and LGR-CNN," Sensors, vol. 23, no. 3, p. 1464, Jan.       2023, doi: 10.3390/s23031464.
 
 * **APA 7th Edition** :
 
-Zhang, Y., Li, Z., Yang, Z., Yuan, B., & Liu, X. (2023). Air-GR: An Over-the-Air Handwritten Character Recognition System Based on Coordinate Correction YOLOv5 Algorithm and LGR-CNN. Sensors, 23(3), 1464. https://doi.org/10.3390/s23031464
+  Zhang, Y., Li, Z., Yang, Z., Yuan, B., & Liu, X. (2023). Air-GR: An Over-the-Air Handwritten Character Recognition System Based on Coordinate Correction YOLOv5 Algorithm and LGR-CNN. Sensors, 23(3), 1464.                https://doi.org/10.3390/s23031464
 
 * **Dataset Citations** :
-MNIST Dataset: LeCun, Y., Cortes, C., & Burges, C. J. (2010). MNIST handwritten digit database. AT&T Labs. http://yann.lecun.com/exdb/mnist/
+  MNIST Dataset: LeCun, Y., Cortes, C., & Burges, C. J. (2010). MNIST handwritten digit database. AT&T Labs. http://yann.lecun.com/exdb/mnist/
 
-Google Quick, Draw! Dataset: Google Inc. (2017). Quick, Draw! Dataset. Google Creative Lab. https://github.com/googlecreativelab/quickdraw-dataset
+  Google Quick, Draw! Dataset: Google Inc. (2017). Quick, Draw! Dataset. Google Creative Lab. https://github.com/googlecreativelab/quickdraw-dataset
